@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".MainActivity">
 
     <EditText
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Descripción del producto"
+        android:fontFamily="sans-serif-condensed-light"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/txtmarca"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Código"
+        android:fontFamily="sans-serif-condensed-light"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/txtpresentacion"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed-light"
         android:hint="Marca"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/txtdescripcion"
@@ -49,8 +53,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed-light"
         android:hint="Presentación"
         android:inputType="textMultiLine"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,6 +69,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Precio del producto"
+        android:fontFamily="sans-serif-condensed-light"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,14 +80,16 @@
 
     <Button
         android:id="@+id/btnGuardar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="198dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="106dp"
         android:layout_marginTop="131dp"
-        android:layout_marginBottom="110dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="120dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="Guardar Producto"
         app:layout_constraintBottom_toTopOf="@+id/fabRegresarListaProductos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtpresentacion" />
 

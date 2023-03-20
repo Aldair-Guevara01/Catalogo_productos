@@ -26,9 +26,9 @@ public class lista_productos extends AppCompatActivity {
     Bundle parametros = new Bundle();
     DB db_agenda;
     ListView lts;
-    Cursor cAMigos;
+    Cursor cProductos;
     FloatingActionButton btn;
-    final ArrayList<String> alAmigos = new ArrayList<String>();
+    final ArrayList<String> alProductos = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +57,8 @@ public class lista_productos extends AppCompatActivity {
         inflater.inflate(R.menu.mimenu, menu);
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-        cAMigos.moveToPosition(info.position);
-        menu.setHeaderTitle(cAMigos.getString(1)); //1=> Nombre del producto...
+        cProductos.moveToPosition(info.position);
+        menu.setHeaderTitle(cProductos.getString(1)); //1=> Nombre del producto...
     }
 
     @Override
@@ -71,12 +71,12 @@ public class lista_productos extends AppCompatActivity {
                     return true;
                 case R.id.mnxModificar:
                     String amigos[] = {
-                            cAMigos.getString(0), //idAmigo
-                            cAMigos.getString(1), //codigo
-                            cAMigos.getString(2), //descripcion
-                            cAMigos.getString(3), //marca
-                            cAMigos.getString(4), //presentacion
-                            cAMigos.getString(5), //precio
+                            cProductos.getString(0), //idAmigo
+                            cProductos.getString(1), //codigo
+                            cProductos.getString(2), //descripcion
+                            cProductos.getString(3), //marca
+                            cProductos.getString(4), //presentacion
+                            cProductos.getString(5), //precio
                     };
                     parametros.putString("accion", "modificar");
                     parametros.putStringArray("amigos", amigos);
@@ -95,11 +95,11 @@ public class lista_productos extends AppCompatActivity {
     void eliminarProductos(){
         AlertDialog.Builder confirmacion =  new AlertDialog.Builder(lista_productos.this);
         confirmacion.setTitle("Esta seguro de eliminar a?: ");
-        confirmacion.setMessage(cAMigos.getString(1)); //nombre
+        confirmacion.setMessage(cProductos.getString(1)); //nombre
         confirmacion.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                db_agenda.administrar_agenda(cAMigos.getString(0), "", "", "","",""
+                db_agenda.administrar_agenda(cProductos.getString(0), "", "", "","",""
                         ,"eliminar");
                 obtenerDatosAmigos();
                 dialogInterface.dismiss();//cerrar la cuadro de dialogo
@@ -115,17 +115,17 @@ public class lista_productos extends AppCompatActivity {
     }
     public void obtenerDatosAmigos(){
         try {
-            alAmigos.clear();
+            alProductos.clear();
             db_agenda = new DB(lista_productos.this, "", null, 1);
-            cAMigos = db_agenda.consultar_agenda();
-            if(cAMigos.moveToFirst()){
-                lts = findViewById(R.id.ltsAmigos);
+            cProductos = db_agenda.consultar_agenda();
+            if(cProductos.moveToFirst()){
+                lts = findViewById(R.id.ltsProductos);
                 final ArrayAdapter<String> adAmigos = new ArrayAdapter<String>(lista_productos.this,
-                        android.R.layout.simple_expandable_list_item_1, alAmigos);
+                        android.R.layout.simple_expandable_list_item_1, alProductos);
                 lts.setAdapter(adAmigos);
                 do{
-                    alAmigos.add(cAMigos.getString(1));//1 es el nombre del amigo, pues 0 es el idAmigo.
-                }while(cAMigos.moveToNext());
+                    alProductos.add(cProductos.getString(1));//1 es el nombre del amigo, pues 0 es el idAmigo.
+                }while(cProductos.moveToNext());
                 adAmigos.notifyDataSetChanged();
                 registerForContextMenu(lts);
             }else{
