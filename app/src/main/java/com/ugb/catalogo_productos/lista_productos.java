@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -20,6 +21,9 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ugb.catalogo_productos.db.DB;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class lista_productos extends AppCompatActivity {
@@ -29,6 +33,11 @@ public class lista_productos extends AppCompatActivity {
     Cursor cProductos;
     FloatingActionButton btn;
     final ArrayList<String> alProductos = new ArrayList<String>();
+
+    JSONArray datosJson; //para los datos que vienen del servidor
+    JSONObject jsonObject;
+    ProgressDialog progreso; //para barra de progreso
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
