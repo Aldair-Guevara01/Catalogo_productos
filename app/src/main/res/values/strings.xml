@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Catalogo_productos</string>
+    <string name="app_name">Calculadora basica</string>
+    <string-array name="opciones_calculadora">
+        <item>Suma</item>
+        <item>Resta</item>
+        <item>Multiplicacion</item>
+        <item>Division</item>
+        <item>Exponente</item>
+    </string-array>
 </resources>

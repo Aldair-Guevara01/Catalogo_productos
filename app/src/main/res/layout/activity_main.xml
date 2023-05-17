@@ -4,101 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+    android:layout_margin="20dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/txtcodigo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Descripción del producto"
-        android:fontFamily="sans-serif-condensed-light"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/txtmarca"
+    <ImageButton
+        android:id="@+id/imgAmigo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtdescripcion"
+        android:id="@+id/txtnombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="Código"
-        android:fontFamily="sans-serif-condensed-light"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/txtpresentacion"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtmarca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgAmigo" />
 
     <EditText
-        android:id="@+id/txtmarca"
+        android:id="@+id/txtdireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
-        android:fontFamily="sans-serif-condensed-light"
-        android:hint="Marca"
+        android:hint="Direccion"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/txtdescripcion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcodigo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtnombre" />
 
     <EditText
-        android:id="@+id/txtpresentacion"
+        android:id="@+id/txtTelefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
-        android:fontFamily="sans-serif-condensed-light"
-        android:hint="Presentación"
-        android:inputType="textMultiLine"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
+        android:hint="Telefono"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtdescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/txtdireccion" />
 
     <EditText
-        android:id="@+id/txtprecio"
+        android:id="@+id/txtemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="Precio del producto"
-        android:fontFamily="sans-serif-condensed-light"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtdescripcion"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
 
     <Button
         android:id="@+id/btnGuardar"
-        android:layout_width="198dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="131dp"
-        android:layout_marginEnd="107dp"
-        android:layout_marginBottom="120dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Guardar Producto"
-        app:layout_constraintBottom_toTopOf="@+id/fabRegresarListaProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Guardar Amigo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpresentacion" />
+        app:layout_constraintTop_toBottomOf="@+id/txtemail" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabRegresarListaProductos"
+        android:id="@+id/fabRegresarListaAmigos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:tooltipText="Regresar a lista de productos"
+        android:tooltipText="Regresar a lista de amigos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_delete"/>

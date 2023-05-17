@@ -3,33 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/img"
-    tools:context=".lista_productos">
+    android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/txtBuscarProductos"
-        android:hint="Buscar Producto"
-        android:fontFamily="sans-serif-condensed-light"
+        android:id="@+id/txtBuscarAmigos"
+        android:hint="Buscar amigos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <ListView
-        android:id="@+id/ltsProductos"
+        android:id="@+id/ltsAmigos"
         android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAgregarProductos"
+        android:id="@+id/btnAgregarAmigos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
         android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </RelativeLayout>
